@@ -1,0 +1,205 @@
+/* EXPAND/COLLAPSE */
+.collapse{
+    font-size: 24px; 
+  	color: #339900;	
+	font-family: Arial, Helvetica, sans-serif;
+  display:block;
+}
+.collapse + input{
+  display:none;
+}
+.collapse + input + *{
+  display:none;
+}
+.collapse+ input:checked + *{
+  display:block;
+}
+  .anchor-container {
+     position:relative;
+}
+
+
+/* DIV */
+div.container {
+    width:90%; 
+    margin:auto;
+	font-size: 14px;  
+	font-family: Arial, Helvetica, sans-serif;		
+  }
+  
+/* TABLE 90% */	
+table.acc {
+    width:90%;
+    margin: auto;
+    background-color: #CC6666; /*MAROON*/
+    border-width: thick;
+    border: solid #CC6666;
+}
+
+th.acc {
+    height: 50px;
+    background-color: #CC6666;
+    vertical-align: middle; 
+    text-transform: uppercase;    
+}
+tr.acc {
+    height: 100px;
+    vertical-align: top;
+	text-align: center;
+	padding: 1px;
+    border: 0px;
+    border-color: blue;   
+		 
+}
+td.acc {
+    height: 80px;
+    vertical-align: middle;
+	text-align: left;
+	padding: 1px;
+
+}
+
+/* LIST */
+ul.acc {
+    list-style-type: circle;
+		margin: 0;
+		padding: 20px;
+}
+
+/* FONTS */
+.heading {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 36px;
+	font-weight: bold;
+}
+.mainText {
+	font-size: 14px;  
+	font-family: Arial, Helvetica, sans-serif;
+}
+.addressText {
+	font-size: 14px;  
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.blueText12 { 
+	font-size: 14px;
+	color: #1009A6; 
+	font-family: Arial, Helvetica, sans-serif; 
+}
+.blueSubHeader24 {
+	font-size: 24px; 
+	color: #1009A6; 
+	font-family: Arial, Helvetica, sans-serif; 
+}
+.blueSubSmallHeader22 {
+	font-size: 22px; 
+	color: #1009A6; 
+	font-family: Arial, Helvetica, sans-serif; 
+}
+
+.whiteArial14 { 
+	font-size: 14px;
+	color: #ffffff; 
+	font-family: Arial, Helvetica, sans-serif;	
+}
+.greenArial14 {
+	font-size: 14px;  
+	color: #339900;	
+ 	font-family: Arial, Helvetica, sans-serif;
+}
+.greenArial18 {
+	font-size: 18px;  
+	font-family: Arial, Helvetica, sans-serif;
+	color: #008000
+}
+.greenArial20 {
+	font-size: 20px;  
+	color: #339900;	
+	font-family: Arial, Helvetica, sans-serif; 
+}
+
+.redText { 
+	font-size: 14px;
+	color: #ff0000; 
+	font-family: Arial, Helvetica, sans-serif; 
+}
+.orangeText { 
+	font-size: 14px;
+	color: #ff6600; 
+	font-family: Arial, Helvetica, sans-serif; 
+}
+.bodyArial12 {
+	font-size: 12px;  
+	font-family: Arial, Helvetica, sans-serif; 
+}
+.bodyArial14 {
+	font-size: 14px;  
+	font-family: Arial, Helvetica, sans-serif; 
+}
+.orangeTextThanksEvent { 
+	font-size: 14px;
+	color: #ff6600; 
+}
+.tableHeaderArial {
+	font-size: 17px; 
+	color: #000000;  
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+.tableArial {
+	font-size: 13px; 
+	color: #000000;  
+	font-family: Arial, Helvetica, sans-serif;
+		font-weight: bold;
+}
+
+#mainPageContent {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #000000;
+}
+
+/*MAIN MENU*/
+.acclobomenu{
+	width: 150px; /*width of menu 150px*/
+	border-style: solid solid none solid;
+	border-color: #94AA74;
+	border-size: 1px;
+	border-width: 1px;
+}
+
+.acclobomenu ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+	
+.acclobomenu li a{
+	font: bold 12px Verdana, Arial, Helvetica, sans-serif;
+	display: block;
+	background: transparent url(image/buttons/menu.gif) 100% 0;
+  height: 24px; /*Set to height of bg image- padding within link (ie: 32px - 4px - 4px)*/
+	padding: 4px 0 4px 10px;
+	line-height: 24px; /*Set line-height of bg image- padding within link (ie: 32px - 4px - 4px)*/
+	text-decoration: none;
+}	
+
+/*Page you are currently on*/	
+.acclobomenu li a:link, .arrowgreen li a:visited {
+	color: #000000;
+}
+
+/*Mouseover*/
+.acclobomenu li a:hover{
+	color: #C32148;
+	background-position: 100% -32px;
+}
+
+/*Not visited*/	
+.acclobomenu li a.selected{
+	color: #ffffff;
+	background-position: 100% -64px;
+}
+
+
+

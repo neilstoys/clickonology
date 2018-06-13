@@ -1,0 +1,119 @@
+/* 
+/////////////////////////////////////////
+// COMPANY : Clickonology              // 
+// PROJECT : Clickonology Responsive   //
+// FILE    : clickonology.css           //
+// CREATED : Nov 10 2016               //
+// MODIFIED :                          //
+/////////////////////////////////////////
+*/
+
+/* RESERVED */
+body {
+    width: 100%;
+    font-family: Arial, "Times New Roman", serif;
+    font-size: 1.7rem;
+
+}
+.center-block {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+header img {
+    width: 70%;
+}
+#maintext h1 {
+    text-align: center;
+    color: rgba(15,6,98,1);
+    font-weight: 600;
+    padding: 25px;
+}
+h2 {
+    color: rgba(15,6,98,1) !important;
+    font-weight: 600 !important;
+}
+.section {
+    padding: 30px 100px;
+}
+.fas {
+    font-size: 5rem;
+    color: rgba(15,6,98,1);
+}
+
+/*NAV BAR*/
+/*corner toggle / icon-bar*/
+.navbar-inverse .navbar-toggle .icon-bar {
+    background-color: rgba(15,6,98,1);  /*change line colour of square icon-bar - dark blue*/
+}
+.navbar-inverse .navbar-toggle {
+background-color:  rgba(210, 232, 246, 1);  /*change bg colour of square icon-bar - l.blue*/
+}
+.navbar-inverse .navbar-toggle:hover {
+background-color: rgba(255, 255, 255, 1);  /*change bg colour of square icon-bar on hover*/
+}
+.navbar-inverse .navbar-toggle:focus {
+background-color: rgba(255, 255, 255, 1);  /*change bg colour of square icon-bar on focus*/
+}
+/*navbar*/
+.navbar-inverse {
+    position: fixed;
+    width: 100%;
+    background-color:rgba(0,0,102,1); /*change colour of navbar bar - dk blue*/
+    border-color: #E7E7E7; /*change colour of navbar bar*/
+}
+/* title */
+.navbar-inverse .navbar-brand {
+    color: rgba(210, 232, 246, 1); /*change colour of navbar brand l.blue*/
+}
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus {
+    color: rgba(255, 255, 255, 1); /*change colour of navbar brand on hover/focus - white*/
+}
+/* link */
+.navbar-inverse .navbar-nav > li > a {
+    color: rgba(210, 232, 246, 1); /*change colour of links - l.blue*/
+}
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+    color: #FFF; /*change colour of links on hover/focus*/
+}
+.navbar-inverse .navbar-nav > .active > a, 
+.navbar-inverse .navbar-nav > .active > a:hover, 
+.navbar-inverse .navbar-nav > .active > a:focus {
+    color: rgba(15,6,98,1); 		/*change colour of active tab - dk blue*/
+    background-color: rgba(210, 232, 246, 1);  /*change colour of active tab bg- l.blue*/
+}
+.navbar-inverse .navbar-nav > .open > a, 
+.navbar-inverse .navbar-nav > .open > a:hover, 
+.navbar-inverse .navbar-nav > .open > a:focus {
+    color: rgba(15,6,98,1);		/*change colour of clicked top level link - dk blue*/
+    background-color:  rgba(210, 232, 246, 1);	/*change colour of clicked top level link bg - l.blue*/
+}
+/* caret */
+.navbar-inverse .navbar-nav > .dropdown > a .caret {
+    border-top-color: rgba(210, 232, 246, 1); /*change colour of carat - l.blue*/
+    border-bottom-color: #777; /*???*/
+}
+.navbar-inverse .navbar-nav > .dropdown > a:hover .caret,
+.navbar-inverse .navbar-nav > .dropdown > a:focus .caret {
+    border-top-color: rgba(255, 255, 255, 1); /*change colour of carat on hover/focus - white*/
+    border-bottom-color: #333; /*???*/
+}
+.navbar-inverse .navbar-nav > .open > a .caret,  
+.navbar-inverse .navbar-nav > .open > a:hover .caret, 
+.navbar-inverse .navbar-nav > .open > a:focus .caret {
+    border-top-color: rgba(15,6,98,1); /*change colour of carat when clicked - dk blue*/
+    border-bottom-color: #555; /*???*/
+}
+/*Dropdown menu*/ 
+.navbar-nav > li > .dropdown-menu {background-color: rgba(210, 232, 246, 1);} /*bg colour of dd menu - l.blue*/
+.dropdown-menu li>a{color: rgba(15,6,98,1); } /*colour of dd menu text - dk blue*/
+.dropdown-menu li>a:hover{background: rgba(15,6,98,1); } /*change colour of dd menu hover bg - dk blue*/
+.dropdown-menu li>a:hover{color: rgba(255, 255, 255, 1); }  /*change text colour of dd menu hover - white*/
+.dropdown-menu li>a:focus{background: rgba(0, 0, 0, 1); } /*change bg colour of dd menu focus - black*/
+ 
+.navbar .nav .active > .dropdown-toggle, .navbar .nav .open.active > .dropdown-toggle {
+  background-color: rgba(210, 232, 246, 1); /*Dropdown top navbar menu link highlighted*/
+}
+

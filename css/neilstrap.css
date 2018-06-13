@@ -1,0 +1,692 @@
+/* course2.css 
+DOM Document Object Model
+Default Web Browser style
+External style sheet
+Internal style (in the head section)
+Inline style (inside an HTML Element)
+Similar Rules - uses last one it saw listed */
+
+/*RESET*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0; }
+	
+header{
+	background: #666666;
+	text-align: center !important; /* Center text is IMPORTANT - OVERRULES every rule */
+}
+
+body{
+	background:#B3B3B3;
+	font-size: 125%;
+	text-align:center;
+	display:table; /* Alternate way of tables (see Display in divcol section of this css */
+}
+myBorderBox{
+	/* Inline Element; Default height and width is the content.
+		Anything not inline (Block) can take width and height properties.*/	
+	/*Different ways to set the height and width of different elements.
+		Absolute-set to specific size, i.e. px,mm,cm,pt....
+		Fluid-sets size relative to surrounding elements, i.e. %m(for font) 1em is curent size, .75em is 75%
+			1rem is current size of root elelent.*/
+	box-sizing:border-box; /*border-box,content-box,inherit*/			
+	background-color:rgba(0,204,51,1);
+	color:rgba(153,102,51,1); /*text colour*/
+
+	width:40%; /*width= margin(px)+border(px)+padding(px)+WIDTH(px)+padding(px)+border(px)+margin(px)*/
+	display:inline-block; /*block,inline-block,table-cell,inline-table etc*/
+	height: 200px;
+	padding:25px; /*space between content and Border. Positive padding is more space. Negative less or ontop of Border*/	
+	border:20px solid rgba(255,255,51,1); /*none,dotted,dashed,solid,double,grooved,ridge,inset,outset,hidden colour,transparent*/
+	/*Border-width:10px 20px; Xpx Xpx,top/bottom,left/right: Xpx Xpx Xpx,t/l&r/b: Xpx Xpx Xpx Xpx,t/r/b/left*/
+  margin:5px; /*space between Border & neighbour. Positive, move to right or down. Negative, closer i.e. left or upward*/
+	/*margin:10px 20px; Xpx Xpx,top/bottom,left/right: Xpx Xpx Xpx,t/l&r/b: Xpx Xpx Xpx Xpx,t/r/b/left*/
+	margin-top:50px;
+	/*To center an element (must be display:Block) margin:0 auto; 
+		Element must not float, must not have a fixed or absolute position or a width that is not auto*/
+}
+BorderBox{ /*My own default Border box*/
+	box-sizing:border-box;		
+	background-color:rgba(0,204,51,1);
+	color:rgba(153,102,51,1); /*text colour*/
+	width:40%;
+	display:inline-block;
+	height: 200px;
+	padding:25px;	
+	border:20px solid rgba(255,255,51,1);
+  margin:5px;
+	margin-top:50px;
+}
+ThreeSectionBlock{ /*My own default row of 3 section boxes*/
+	width:30%;
+	display:inline-block;
+	float:left;
+	margin-right:2%;
+}
+/*Remamber clear:both; to stop things floating below*/
+
+/*LINKS: a:hover must come after a:link
+	a:visited and a:active must come after a;hover
+a:link*/
+a:hover{
+	background:rgba(51,51,51,1);
+	color:rgba(0,153,255,1);
+}
+a:visited{
+	color:rgba(255,102,0,1);
+}
+a:active{
+	border:3px solid;
+}
+a:focus{
+	background:rgba(51,51,51,1);
+	color:rgba(0,153,255,1);
+}
+
+/* Navigation bar below the heading */
+nav{
+	font-variant: small-caps;  /* Puts everything in small capitals */
+	font-family: Arial, "Times New Roman", serif;
+	font-size: 150%;
+}
+
+nav a{ /*Nav links*/
+	display:inline-block;
+	font-weight:bold;
+	color:rgba(51,51,51,1);
+	background-color:rgba(0,153,255,1);
+	width:200px;
+	text-align:center;
+	padding:4px;
+	text-decoration:none;
+	margin:0 auto;
+	margin-top:10px;
+  white-space: nowrap;	 /*stops overlapping*/
+}
+
+/* IMAGES */
+myImg{ /*My own default image*/
+	width:75%;
+}
+/*If the container has a specified dimension (in my example the width), when telling the image to have the width at 100%, it will make it the full width of the container. 
+The auto at the height will make the image have the height proportional to the new width.
+Resize image in container. . . .
+.container {
+    width: 200px;
+    height: 120px;
+}
+Resize images. . . . 
+.container img {
+    width: 100%;
+    height: auto;
+}
+End resize image in container
+
+Or this way. . . . 
+    .holder {
+      display: inline;
+    }
+    .holder img {
+      max-height: 200px;
+      max-width: 200px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body>
+  <div class='holder'>
+    <img src='meld.png'>
+  </div>
+  <div class='holder'>
+    <img src='twiddla.png'>
+  </div>
+  <div class='holder'>
+    <img src='meld.png'>
+  </div>
+
+3rd Option
+#your-div {
+  background: url('image.jpg') no-repeat;
+  background-size:contain;
+}	
+	*/
+	
+/* COLOUR 
+Use rgba and careful of colour blind 
+e.g.boxes */
+.box_1 {
+      background: rgba(9, 53, 135, .5);
+      width:250px;
+      height:250px;
+      margin-top:50px;
+      padding:2px;
+}
+.box_2 {
+      background: rgba(17, 191, 083, .25);
+      width:250px;
+      height:250px;
+      margin-top:-200px;
+      margin-left:50px;
+      padding:2px;
+}
+.box_3 {
+      background: rgba(227, 188, 32, .15);
+      width:250px;
+      height:250px;
+      margin-top:-200px;
+      margin-left:100px;
+      padding:2px;
+}
+
+
+
+/* TEXT */
+h1{
+	color:rgba(51,51,51,1);
+	line-height: 200%;
+	font-style:normal;
+	font-variant:small-caps;
+	font-family: Arial, Veranda, Helvetica, "Times New Roman", Times;
+}
+h2{
+	color:rgba(0,102,51,1);
+	background-color: rgba(102,102,102,1);
+}
+
+/* DISPLAY & VISIBILITY 
+Span is inline and only takes up so much of the page as tehy need
+DIV & Paragraphs are BLOCK and take up more space
+BLOCK likes to be on it's own line
+
+*/
+span{
+	height: 50px;
+	width: 15%;
+	background:rgba(255,0,0,1);
+	display:inline-block; /* All boxes in a line and takes up as much width & height as necessary to display content */
+	/* display:block; */ /* All boxes on top of each other */	
+	/* display:none; */ /* Box disappears */
+	float:right; /* note boxes reversed cos browser starts from the right. Next box will follow on same line */
+	/* clear:both; */ /* note these boxes are clear of objects to the left and right. */			
+}
+div{
+	height: 100px;
+	width: 45%;
+	background:rgba(204,255,0,1);
+	display:inline-block; /* All boxes in a line and takes up as much width & height as necessary to display content */
+	/* display:block; */ /* All boxes on top of each other */	
+	/* display:none; */ /* Box disappears */
+	float:left; /* note these boxes starts from the left. */
+	/* clear:both; */ /* note these boxes are clear of objects to the left and right. */		
+}
+p{
+	height: 200px;
+	width: 55%;
+	background:rgba(0,0,153,1);
+	display:inline-block; /* All boxes in a line and takes up as much width & height as necessary to display content */
+	/* display:block; */ /* All boxes on top of each other */	
+	/* display:none; */ /* Box disappears */
+	clear:both; /* note these boxes are clear of objects to the left and right. */			
+}
+/*SELECTORS*/
+/*Descendant selectors
+nav a - style all of the links in a nav tag
+Child selector (nav>a) - anchor elements must be a child of the nav, no intermediate tags i.e. paragraph
+Adjacent sibling (h1+ol) - elements must be at the same level and follow each other. Not often used
+													 i.e. H1 immediately followed by an ordered list (ol can't be after other stuff)
+# selector
+#header{
+	border:solid;
+} in css
+<div id="header"> in HTML
+#current
+<a href="bbc.com" class="current">BBC</a> example of once only in webpage in this navbar
+.current{                link is different
+	color:rgba(0,0,153,1):
+	background:rgba(111,0,153,1);
+}
+Narrow the scope: p.main - All the paragraphs using the class main
+header img.special  - All the images that have class=special in the header
+Expand the scope: p,h1, #main, .special{....rues that apply}
+* styles everything on the page - apparently good for debugging.
+Attribute selectors:
+a{href='info.html'] 
+a[href^='http://umich'] Gonna match everything beginning with http://umich
+img[src$='.png'] match everything ending .png
+i.e. a[href$='.org']{
+	background:rgba(0,0,153,1);
+}
+a[href$='.edu']{
+	background:rgba(200,51,23,1);
+}
+a[href*='umich'] match everything with umich in it
+a[target] {...} <a href="#" target="_blank">...</a>
+
+DECENDANT SELECTOR. . . all levels in <article>.
+article h2 {...}
+HTML
+<h2>...</h2>
+<article>
+  <h2>This heading will be selected</h2>
+  <div>
+    <h2>This heading will be selected</h2>
+  </div>
+</article>
+
+DIRECT CHILD SELECTOR. . . only one level in.
+article > p {...}
+HTML
+<p>...</p>
+<article>
+  <p>This paragraph will be selected</p>
+  <div>
+    <p>...</p>
+  </div>
+</article>
+
+GENERAL SIBLING SELECTOR. . . In order for a p element to be selected it must come after any h2 element in same level
+h2 ~ p {...}
+HTML
+<p>...</p>
+<section>
+  <p>...</p>
+  <h2>...</h2>
+  <p>This paragraph will be selected - shares the same parent</p>
+		<div>
+			<p>...</p>
+		</div>
+  <p>This paragraph will be selected - shares the same parent</p>
+</section>
+
+ADJACENT SIBLING SELECTOR. . . only p elements directly following after h2 elements will be selected. Both of which must also share the same parent element.
+h2 + p {...}
+HTML
+<p>...</p>
+<section>
+  <p>...</p>
+  <h2>...</h2>
+  <p>This paragraph will be selected</p>
+  <div>
+    <p>...</p>
+  </div>
+  <p>...</p>
+</section>
+
+PSEUDO CLASSES
+input:enabled {...}
+input:disabled {...}
+input:checked {...}
+input:indeterminate {...}
+
+li:first-child {...}
+li:last-child {...}
+div:only-child {...}
+HTML
+<ul>
+  <li>This list item will be selected</li>
+  <li>
+    <div>This div will be selected</div>
+  </li>
+  <li>
+    <div>...</div>
+    <div>...</div>
+  </li>
+  <li>This list item will be selected</li>
+</ul>
+
+p:first-of-type {...}
+p:last-of-type {...}
+img:only-of-type {...}
+HTML
+<article>
+  <h1>...</h1>
+  <p>This paragraph will be selected</p>
+  <p>...</p>
+  <img src="#"><!-- This image will be selected -->
+  <p>This paragraph will be selected</p>
+  <h6>...</h6>
+</article>
+
+li:nth-child(3n) {...}    every 3rd item will be selected
+HTML
+<ul>
+  <li>...</li>
+  <li>...</li>
+  <li>This list item will be selected</li>
+  <li>...</li>
+  <li>...</li>
+  <li>This list item will be selected</li>
+</ul>
+
+li:nth-child(2n+3) {...}     will identify every second list item starting with the third and then onward
+HTML
+<ul>
+  <li>...</li>
+  <li>...</li>
+  <li>This list item will be selected</li>
+  <li>...</li>
+  <li>This list item will be selected</li>
+  <li>...</li>
+</ul>
+
+li:nth-child(-n+4) {...}    selector is identifying the top four list items, leaving the rest of the list items unselected
+HTML
+<ul>
+  <li>This list item will be selected</li>
+  <li>This list item will be selected</li>
+  <li>This list item will be selected</li>
+  <li>This list item will be selected</li>
+  <li>...</li>
+  <li>...</li>
+</ul>
+
+li:nth-child(-2n+5) {...}    selector identifies every second list item within the first five list items starting with the first list item
+HTML
+<ul>
+  <li>This list item will be selected</li>
+  <li>...</li>
+  <li>This list item will be selected</li>
+  <li>...</li>
+  <li>This list item will be selected</li>
+  <li>...</li>
+</ul>
+
+Changing from the :nth-child(n) pseudo-class to the :nth-last-child(n) pseudo-class switches the direction of counting, with counting starting from the end of the document tree using the :nth-last-child(n) pseudo-class. The li:nth-last-child(3n+2) selector, for example, will identify every third list item starting from the second to last item in a list, moving towards the beginning of the list
+li:nth-last-child(3n+2) {...}
+HTML
+<ul>
+  <li>...</li>
+  <li>This list item will be selected</li>
+  <li>...</li>
+  <li>...</li>
+  <li>This list item will be selected</li>
+  <li>...</li>
+</ul>
+
+The :nth-of-type(n) and :nth-last-of-type(n) pseudo-classes are very similar to that of the :nth-child(n) and :nth-last-child(n) pseudo-classes, however instead of counting every element within a parent the :nth-of-type(n) and :nth-last-of-type(n) pseudo-classes only count elements of their own type. For example, when counting paragraphs within an article, the :nth-of-type(n) and :nth-last-of-type(n) pseudo-classes will skip any headings, divisions, or miscellaneous elements that are not paragraphs, while the :nth-child(n) and :nth-last-child(n) would count every element, no matter it’s type, only selecting the ones that match the element within the stated selector. Additionally, all of the same expression possibilities used within the :nth-child(n) and :nth-last-child(n) pseudo-classes are also available within the :nth-of-type(n) and :nth-last-of-type(n) pseudo-classes.
+
+Using the :nth-of-type(n) pseudo-class within the p:nth-of-type(3n) selector we are able to identify every third paragraph within a parent, regardless of other sibling elements within the parent.
+p:nth-of-type(3n) {...}
+HTML
+<article>
+  <h1>...</h1>
+  <p>...</p>
+  <p>...</p>
+  <p>This paragraph will be selected</p>
+  <h2>...</h2>
+  <p>...</p>
+  <p>...</p>
+  <p>This paragraph will be selected</p>
+</article>
+
+Using the :nth-last-of-type(n) pseudo-class we can write the p:nth-last-of-type(2n+1) selector which identifies every second paragraph from the end of a parent element starting with the last paragraph. 
+p:nth-last-of-type(2n+1) {...}
+HTML
+<article>
+  <h1>...</h1>
+  <p>...</p>
+  <p>This paragraph will be selected</p>
+  <p>...</p>
+  <h2>...</h2>
+  <p>This paragraph will be selected</p>
+  <p>...</p>
+  <p>This paragraph will be selected</p>
+</article>
+
+TARGET PSEUDO CLASS
+Looking at the code below, if a user would visit a page with the URI fragment identifier of #hello the section with that same ID attribute value would be stylized accordingly using the :target pseudo-class. If the URI fragment identifier changes, and matches the ID attribute value of another section, that new section may be stylized using the same selector and pseudo-class from before.
+section:target {...}
+HTML
+<section id="hello">...</section>      that element may be identified and stylized using the :target pseudo-class
+
+EMPTY PSEUDO CLASS
+Using the div:empty pseudo-class will identify divisions without any children or text nodes. Below the divisions on lines 2 and 3 are selected as they are completely empty. A comment it is not considered to be a child. White space or the <strong> child element are not selected.
+div:empty {...}
+HTML
+<div>Hello</div>
+<div><!-- Coming soon --></div><!-- This div will be selected -->
+<div></div><!-- This div will be selected -->
+<div> </div>
+<div><strong></strong></div>
+
+NEGATION PSEUDO CLASS
+Below both the div:not(.awesome) and :not(div) selectors use the :not(x) pseudo-class. 
+div:not(.awesome) selector identifies any division without the class of awesome, while the 
+:not(div) selector identifies any element that isn’t a division. 
+As a result the division on line 1 is selected as well as the two sections on lines 3 and 4, thus they are marked bold. The only element not selected is the division with the class of awesome, as it falls outside of the two negation pseudo-classes.
+div:not(.awesome) {...}
+:not(div) {...}
+HTML
+<div>This div will be selected</div>
+<div class="awesome">...</div>
+<section>This section will be selected</section>
+<section class="awesome">This section will be selected</section>
+
+PSEUDO ELEMENTS
+Textual:
+	:first-letter, :first-line  (i.e. put a capital letter in)
+Position/Generated:
+	:before, :after  (i.e. credit card info, says put a picture in here :before)
+Fragments:
+	::selection
+
+
+*/
+
+/*GRADIENTS*/
+header, footer{ /*colour cleared out of footer as it follows this and thus supercedes it*/
+	background: #666666; /*colour incase gradient doesn't work*/
+	background: -moz-linear-gradient(top, #666666 0%, #00b7ea 100%); /*Firefox colours from 0-100*/
+	background: -webkit-linear-gradient(#666666 0%, #00b7ea 100%); /*MS colours from 0-100*/
+	background: -o-linear-gradient(#666666 0%, #00b7ea 100%); /*Opera colours from 0-100*/
+	background: linear-gradient(#666666 0%, #00b7ea 100%); /*colours from 0-100*/
+
+}
+
+/*EDITABLE TABLE*/
+table {  /*Change multiple font families, size, weight and line-height*/
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:medium;
+	font-weight:lighter;
+	line-height: 110%;
+	text-align: center;	/*Style the table so that the text is centered - first column is left-aligned later in css code*/
+    margin: 0 auto; /*Margin - center the table*/
+		width:	90%;	/*Width - dont take up the entire space*/	
+}
+th,
+td {   /*Change padding, font colour/background colour set in tr*/
+	/*background-color:rgba(153,255,0,1);*/
+  padding: 8px 19px;
+	color:rgba(0,0,102,1);	/*dk blue*/
+}
+/*Set opacity to .8, left align 1st column, center other 2; Set opacity to 1 when element hovered on*/
+tr{
+	opacity:0.8;
+  filter: Alpha(opacity=50); /* IE8 and earlier */
+  background:rgba(255,255,255,1); /*Table background changed to background colour*/	
+}
+tr:hover{
+		opacity:1;
+  filter: Alpha(opacity=100); /* IE8 and earlier */
+	font-weight:bold;
+	text-shadow: 2px 2px 8px #FF0000; /*Optional, text-shadow distance from letter, thickness, blur, colour*/ 
+}
+tr:first-child {
+	opacity:1;  /*Header opacity is set to 1 (nromal text)*/
+  filter: Alpha(opacity=100); /* IE8 and earlier */	
+}
+tr:first-child th:first-child {
+	border-style: solid;  /*Add a table header border, top&left, round top corners & (make bottom border thicker - see below)*/
+	border-color:rgba(0,0,102,1);	/*dk blue*/
+	border-width:2px 0px 4px 2px;	
+	border-radius:20px 0px 0px 0px;
+}
+tr:first-child th:last-child {
+	border-style: solid;  /*Add a table header border, top&right, round top corners & (make bottom border thicker - see below)*/
+	  border-color:rgba(0,0,102,1);	/*dk blue*/
+	border-width: 2px 2px	4px 0px;		
+  border-top-right-radius: 20px;
+}
+tr:last-child td:first-child {
+  border-bottom-left-radius: 20px;
+}
+tr:last-child td:last-child {
+  border-bottom-right-radius: 20px;
+	-moz-border-radius-bottomright:5em;			
+}
+td {
+  border-right: 1px solid #c6c9cc;
+  border-bottom: 1px solid #c6c9cc;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;	
+	border-radius:5px;
+	width:25%;	  /*Width set so columns do not autosize when shadow hover makes font bigger*/
+}
+/*Style the table so that the text in the first column is left-aligned and the text in the other two columns is centered*/
+td:first-child {
+  border-left: 1px solid #c6c9cc;
+  text-align: left;	
+	width:50%;	  /*Width set so columns do not autosize when shadow hover makes font bigger*/
+}
+tr:nth-child(even) td {
+  background:rgba(102,255,255,1);  /*Table background even rows changed to light blue*/	
+}
+th { /*Gradient for header*/
+  background:rgba(0,51,255,1);  /*colour incase gradient doesn't work*/
+	background: -webkit-linear-gradient( rgba(204,204,204,1), rgba(102,102,102,1)); /*Safari*/
+	background: -o-linear-gradient(rgba(204,204,204,1), rgba(102,102,102,1)); /*Opera*/
+	background: -moz-linear-gradient(rgba(204,204,204,1), rgba(102,102,102,1)); /*Firefox*/
+	background: linear-gradient(rgba(204,204,204,1), rgba(102,102,102,1));
+		
+  color:rgba(255,255,255,1);
+  text-align: center; /*Add at least one other property*/
+	padding:10px;
+	border-top: 2px solid rgba(0,0,102,1); /*Add a table header border, bottom border thicker*/
+	border-bottom: 4px solid rgba(0,0,102,1);	/*dk blue*/	
+	text-shadow:none;		/*switch off the text effect for this row*/		
+}
+/*END OF  EDITABLE TABLE*/
+
+/*LISTS*/
+ol{
+	list-style-type:lower-alpha; /*changes default 1,2,3 to A,B,C etc*/
+}
+ul{
+	list-style-image:square url('icon.gif'); /*Unordered list: use default square if icon.gif not found*/
+}
+ol, ul{
+	list-style-image:url('../imgs/lightening.gif'); /*Overrides ol and ul with this gif*/
+}
+
+summary{
+	font-style:normal;
+}
+
+details{
+	font-style: italic;	
+}
+
+footer{
+	background: #666666	
+}
+
+/*CUSTOM SECTION*/
+cust-p{ 
+	height: 200px;
+	width: 33%;
+	background:rgba(255,0,204,1);	
+	display:inline-block; /* All boxes in a line */
+	/* display:block; */ /* All boxes on top of each other */	
+	/* display:none; */ /* Box disappears */	
+}
+
+divcol{ /* Div column */
+	width: 25%;
+	height: 300px; /* Height not always necessary */
+	background:rgba(0,255,102,1);
+	display:table-cell; /* Alternate way of tables (see Display in corresponding body section of this css */
+	float:left;
+	overflow:scroll; /* Adds a scroll when height is set */
+}
+divcol2{ /* Div column in row 2 */
+	width: 26%;
+	height: 300px; /* Height not always necessary */
+	background:rgba(204,0,102,1);
+	display:table-cell; /* Alternate way of tables (see Display in corresponding body section of this css */
+	float:left;
+	overflow:scroll; /* Adds a scroll when height is set */
+}
+
+/*MEDIA QUERY - Cellphone first*/
+body{
+	margin: 1%;
+	padding:1%;
+	background-color:rgba(204,204,204,1);
+	font-size: 100%;
+	min-width: 500px; /*Don't shrink any further*/
+}
+/*MEDIA QUERY - iPad (screen width is at least 768px)*/
+@media only screen and (min-width : 768px) {
+	nav a{
+	display:inline-block;
+	background-color:rgba(255,255,255,1);
+	border: 1px solid black;
+	text-align: center;
+	border-radius: 35px;
+	text-decoration: none;
+	padding: 2%;
+	margin: 1%;
+	}
+	body{
+		background-color:rgba(153,153,153,1);
+	}
+.myClass{
+	margin: 0em 1em;
+	padding:.75em;
+	border: 1px solid black;
+	border-radius: .25%;
+	
+	/* Safari and Chrome */	
+	-webkit-column-count:3;
+	-moz-column-count: 3;
+	column-count:3;
+}		
+}
+/*MEDIA QUERY - Laptop (screen width is at least 1024px)*/
+@media only screen and (min-width : 1024px) {
+	nav a{
+	display:inline-block;
+	background-color:rgba(255,255,255,1);
+	border: 1px solid black;
+	text-align: center;
+	border-radius: 35px;
+	text-decoration: none;
+	padding: 2%;
+	margin: 1%;
+	}
+	body{
+		background-color:rgba(255,204,255,1);
+	}	
+	img{
+	display:inline-block;
+}
+.myClass{
+	margin: 0em 1em;
+	padding:.75em;
+	border: 1px solid black;
+	border-radius: .25%;
+	
+	/* Safari and Chrome */	
+	-webkit-column-count:3;
+	-moz-column-count: 3;
+	column-count:3;
+}		
+}	
